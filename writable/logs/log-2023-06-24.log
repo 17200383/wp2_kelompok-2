@@ -1,0 +1,140 @@
+CRITICAL - 2023-06-24 00:22:09 --> Invalid file: "login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Login.php(54): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 00:24:32 --> Invalid file: "pages/login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/login.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/login', [], true)
+ 3 APPPATH\Controllers\Login.php(55): view('pages/login')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 00:28:39 --> Call to undefined function form_open()
+in APPPATH\Views\pages\loginview.php on line 1.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/loginview', [], true)
+ 4 APPPATH\Controllers\Login.php(12): view('pages/loginview')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->getIndex()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 00:38:22 --> Undefined variable $hashedPassword
+in APPPATH\Controllers\Login.php on line 41.
+ 1 APPPATH\Controllers\Login.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hashedPassword', 'C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\Login.php', 41)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->postlogin()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 01:22:44 --> Undefined variable $validation
+in APPPATH\Controllers\ReadTest.php on line 35.
+ 1 APPPATH\Controllers\ReadTest.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\ReadTest.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\ReadTest->postIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReadTest))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 07:57:22 --> Array to string conversion
+in APPPATH\Controllers\Test.php on line 75.
+ 1 APPPATH\Controllers\Test.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\Test.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Test->postRead()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 08:18:49 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Test.php on line 93.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\Test.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Test')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Test')
+ 4 SYSTEMPATH\Router\AutoRouterImproved.php(264): class_exists('App\\Controllers\\Test')
+ 5 SYSTEMPATH\Router\AutoRouterImproved.php(115): CodeIgniter\Router\AutoRouterImproved->scanControllers([...])
+ 6 SYSTEMPATH\Router\Router.php(507): CodeIgniter\Router\AutoRouterImproved->getRoute('test')
+ 7 SYSTEMPATH\Router\Router.php(206): CodeIgniter\Router\Router->autoRoute('test')
+ 8 SYSTEMPATH\CodeIgniter.php(815): CodeIgniter\Router\Router->handle('test')
+ 9 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 08:19:14 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Test.php on line 92.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\Test.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Test')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Test')
+ 4 SYSTEMPATH\Router\AutoRouterImproved.php(264): class_exists('App\\Controllers\\Test')
+ 5 SYSTEMPATH\Router\AutoRouterImproved.php(115): CodeIgniter\Router\AutoRouterImproved->scanControllers([...])
+ 6 SYSTEMPATH\Router\Router.php(507): CodeIgniter\Router\AutoRouterImproved->getRoute('test')
+ 7 SYSTEMPATH\Router\Router.php(206): CodeIgniter\Router\Router->autoRoute('test')
+ 8 SYSTEMPATH\CodeIgniter.php(815): CodeIgniter\Router\Router->handle('test')
+ 9 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 08:20:11 --> Array to string conversion
+in APPPATH\Controllers\Test.php on line 76.
+ 1 APPPATH\Controllers\Test.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\Test.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Test->postRead()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 08:21:09 --> Cannot access offset of type string on string
+in APPPATH\Controllers\Test.php on line 77.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Test->postRead()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 08:22:56 --> Attempt to read property "password" on array
+in APPPATH\Controllers\Test.php on line 77.
+ 1 APPPATH\Controllers\Test.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "password" on array', 'C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Controllers\\Test.php', 77)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Test->postRead()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-24 08:59:33 --> mysqli_sql_exception: Unknown column 'user' in 'field list' in C:\xampp\htdocs\wp2_kelompok-2\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\wp2_kelompok-2\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `user`\nF...', 0)
+#1 C:\xampp\htdocs\wp2_kelompok-2\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`\nF...')
+#2 C:\xampp\htdocs\wp2_kelompok-2\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`\nF...')
+#3 C:\xampp\htdocs\wp2_kelompok-2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user`\nF...', Array, false)
+#4 C:\xampp\htdocs\wp2_kelompok-2\system\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\wp2_kelompok-2\app\Models\TestModel.php(23): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\wp2_kelompok-2\app\Controllers\Test.php(82): App\Models\TestModel->readTest('user', 'user')
+#7 C:\xampp\htdocs\wp2_kelompok-2\system\CodeIgniter.php(934): App\Controllers\Test->postRead()
+#8 C:\xampp\htdocs\wp2_kelompok-2\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+#9 C:\xampp\htdocs\wp2_kelompok-2\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\wp2_kelompok-2\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-06-24 08:59:33 --> Unknown column 'user' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `user`
+FROM `users`
+WHERE `username` = \'user\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user`
+FROM `users`
+WHERE `username` = \'user\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user`
+FROM `users`
+WHERE `username` = \'user\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `user`
+FROM `users`
+WHERE `username` = :username:', [...], false)
+ 5 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\TestModel.php(23): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Test.php(82): App\Models\TestModel->readTest('user', 'user')
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Test->postRead()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-24 09:25:51 --> "max_lenght" is not a valid rule.
+in SYSTEMPATH\Validation\Validation.php on line 329.
+ 1 SYSTEMPATH\Validation\Validation.php(329): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('max_lenght')
+ 2 SYSTEMPATH\Validation\Validation.php(179): CodeIgniter\Validation\Validation->processRules('username', 'username', 'a', [...], [...])
+ 3 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Test.php(55): CodeIgniter\Controller->validate([...], [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Test->postAdd()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
