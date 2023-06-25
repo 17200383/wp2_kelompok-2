@@ -1,0 +1,11 @@
+CRITICAL - 2023-06-25 14:27:33 --> Undefined array key "lastupdated"
+in APPPATH\Views\pages\admin.php on line 18.
+ 1 APPPATH\Views\pages\admin.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "lastupdated"', 'C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Views\\pages\\admin.php', 18)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\wp2_kelompok-2\\app\\Views\\pages\\admin.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin', [], true)
+ 5 APPPATH\Controllers\Admin.php(16): view('pages/admin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->getIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

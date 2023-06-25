@@ -8,7 +8,7 @@ class MedicineModel extends Model
 {
     protected $table = 'medicines';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'comments', 'stock'];
+    protected $allowedFields = ['name', 'comments', 'stock','lastmodified'];
 
     public function checkExist($name)
     {
