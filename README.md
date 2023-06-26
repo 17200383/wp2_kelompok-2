@@ -5,7 +5,7 @@ Install [Composer](https://getcomposer.org/download/ "Composer") sebelum menjala
 
 ### Sebelum Mulai
 
-- Install [Composer](https://getcomposer.org/download/ "Composer") 
+- Install [Composer](https://getcomposer.org/download/ "Composer") (Opsional)
 - Letakkan folder di \xampp\htdocs\
 - Jalankan Apache dan MySQL pada [XAMPP](https://www.apachefriends.org/ "XAMPP")
 - Buka http://localhost/phpmyadmin" dan klik import
