@@ -1,5 +1,5 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card">
+    <div class="card text-center">
         <div class="card-body">
             <h5 class="card-title">Login</h5>
             <?= form_open('login/login') ?>

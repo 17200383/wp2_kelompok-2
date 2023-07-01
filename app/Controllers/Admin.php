@@ -3,16 +3,31 @@
 namespace App\Controllers;
 
 use App\Models\MedicineModel;
+use App\Models\PatientModel;
 
 class Admin extends BaseController
 {
     public function getIndex()
     {
-        $data = [
-            'title' => 'Admin'
-        ];
+        if (!session('logged_in')) {
+            return redirect()->to('login');
+        }
+
+        $MedicineModel = new MedicineModel();
+        $data['tableData'] = $MedicineModel->findAll();
+        $data['items'] = $MedicineModel->findAll();
+
+        $PatientModel = new PatientModel();
+        $data['tableData2'] = $PatientModel->findAll();
+       
+        $data['title'] = 'Admin';
+        $data['refer'] = 'admin';
 
         return view('templates/header', $data)
+            .   view('templates/topbar', $data)
+            .   view('pages/patient', $data)
+            .   view('pages/doctor', $data)
+            .   view('pages/dashboard', $data)
             .   view('pages/admin', $data)
             .   view('templates/footer', $data);
     }
@@ -21,7 +36,7 @@ class Admin extends BaseController
     {
         $rules = [
             'name' => 'required|max_length[65]',
-            'stock' => 'required|integer|max_length[2]'
+            'stock' => 'required|integer|max_length[11]'
         ];      
 
         if (! $this->validate($rules)) {
@@ -48,16 +63,19 @@ class Admin extends BaseController
             $id = $MedicineModel->getId($existname['name']);
             $MedicineModel->updateRow($id, $medicine);
             echo 'Updated!';
-            return;
+            return redirect()->back();
         }
        
         $MedicineModel->resetAutoIncrement();
         $save = $MedicineModel->insert($medicine);
     
         if ($save) {
+
             echo 'Successful!';
-            return;
+            return redirect()->back();
+            
         } else {
+
             echo 'Failed!';
             return;
         }

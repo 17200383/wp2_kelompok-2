@@ -28,16 +28,18 @@ class Login extends BaseController
 
         if ($user && password_verify($password, $user['password'])) {
 
+            session()->set('logged_in', true);
             $privilege = $user['privilege'];
 
             if ($privilege == 1) {
                 return redirect()->to('/admin');
             } elseif ($privilege == 2) {
                 return redirect()->to('/dashboard');
-            }
+            } elseif ($privilege == 3) {
+                return redirect()->to('/doctor');
         }
-
         echo 'Failed Login!';
-        return;
+        return redirect()->to('login');
+        }
     }
 }
