@@ -1,3 +1,4 @@
+<div class="bg-primary">
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="<?= base_url('assets/img/Clarines_Symbol.webp') ?>">
@@ -11,4 +12,5 @@
             DB Status : <?= $dbstatus ?>
         </div>
     </div>
+</div>
 </div>

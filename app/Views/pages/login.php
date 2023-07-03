@@ -1,3 +1,4 @@
+<div class="bg-primary-subtile">
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card text-center">
         <div class="card-body">
@@ -11,8 +12,9 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="****">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-outline-primary">Login</button>
             <?= form_close() ?>
         </div>
     </div>
+</div>
 </div>
