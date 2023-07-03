@@ -81,15 +81,24 @@ class Doctor extends BaseController
     {
         $PatientModel = new PatientModel();
         
-        $namepat = $this->request->getPost('namepat');
-        $medicine = $this->request->getPost('medicine');
-        $medrec = $this->request->getPost('medrec');
-
-        $updateMeds = $this->request->getPost('update');
+        $refer = $this->request->getPost('refer');
     
-        if ($updateMeds) {
+        if ($refer === 'admin') {
 
-            $id = $updateMeds;
+            $deleteID = $this->request->getPost('delete');
+
+            if ($deleteID) {
+                $PatientModel->delete($deleteID);
+                return redirect()->back();
+            }
+
+        } elseif ($refer === 'doctor') {
+
+            $updateID = $this->request->getPost('update');
+
+            $namepat = $this->request->getPost('namepat');
+            $medicine = $this->request->getPost('medicine');
+            $medrec = $this->request->getPost('medrec');
 
             $patient = [
                 'namepat' => $namepat,
@@ -97,11 +106,39 @@ class Doctor extends BaseController
                 'medicine' => $medicine
             ];
 
-            $PatientModel->update($id, $patient);
+            $PatientModel->update($updateID, $patient);
             return redirect()->back();
-            
+
         } else {
-            echo 'Error';
+
+            echo 'Error: Unknown refer value - ' . $refer;
+            return;
         }
+    
+        echo 'Error: Invalid operation';
+        return;
     }
+
+        // $namepat = $this->request->getPost('namepat');
+        // $medicine = $this->request->getPost('medicine');
+        // $medrec = $this->request->getPost('medrec');
+
+        // $updateMeds = $this->request->getPost('update');
+    
+        // if ($updateMeds) {
+
+        //     $id = $updateMeds;
+
+        //     $patient = [
+        //         'namepat' => $namepat,
+        //         'medrec' => $medrec,
+        //         'medicine' => $medicine
+        //     ];
+
+        //     $PatientModel->update($id, $patient);
+        //     return redirect()->back();
+            
+        // } else {
+        //     echo 'Error';
+        // }
 }
