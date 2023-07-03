@@ -1,8 +1,6 @@
 # WP2
 ## _Kelompok 2_
 
-Install [Composer](https://getcomposer.org/download/ "Composer") sebelum menjalankan.
-
 ### Sebelum Mulai
 
 - Install [Composer](https://getcomposer.org/download/ "Composer") (Opsional)
