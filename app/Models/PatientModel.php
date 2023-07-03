@@ -8,26 +8,26 @@ class PatientModel extends Model
 {
     protected $table = 'patients';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['namepat', 'medrec', 'medicine'];
+    protected $allowedFields = ['namepat', 'telp', 'addr', 'medrec', 'medicine'];
 
     public function checkExist($namepat)
     {
         return $this->where('namepat', $namepat)->first();
     }
 
-    public function getId($name)
-    {
-        $row = $this->select('id')
-            ->where('name', $name)
-            ->get()
-            ->getRow();
+    // public function getId($namepat)
+    // {
+    //     $row = $this->select('id')
+    //         ->where('namepat', $namepat)
+    //         ->get()
+    //         ->getRow();
 
-        if ($row) {
-            return $row->id;
-        } else {
-            return null;
-        }
-    }
+    //     if ($row) {
+    //         return $row->id;
+    //     } else {
+    //         return null;
+    //     }
+    // }
 
     // public function updateMed($id, $medicine, )
     // {

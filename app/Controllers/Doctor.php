@@ -26,7 +26,7 @@ class Doctor extends BaseController
         return view('templates/header', $data)
             .   view('templates/topbar', $data)
             .   view('pages/patient', $data)
-            .   view('pages/doctor', $data)
+            // .   view('pages/doctor', $data)
             .   view('templates/footer', $data);
     }
 
@@ -34,8 +34,9 @@ class Doctor extends BaseController
     {
         $rules = [
             'namepat' => 'required|max_length[65]',
-            'medrec' => 'required',
-            'medicine' => 'required'
+            'telp' => 'max_length[15]',
+            'addr' => 'max_length[100]',
+
         ];      
 
         if (! $this->validate($rules)) {
@@ -45,11 +46,15 @@ class Doctor extends BaseController
         }
         
         $namepat = $this->request->getPost('namepat');
+        $telp = $this->request->getPost('telp');
+        $addr = $this->request->getPost('addr');
         $medrec = $this->request->getPost('medrec');
         $medicine = $this->request->getPost('medicine');
     
         $patient = [
             'namepat' => $namepat,
+            'telp' => $telp,
+            'addr' => $addr,
             'medrec' => $medrec,
             'medicine' => $medicine   
         ];
@@ -59,8 +64,11 @@ class Doctor extends BaseController
         $existname = $PatientModel->checkExist($namepat);
         
         if ($existname) {
-            $id = $PatientModel->getId($existname['medicine']);
-            $PatientModel->updateMed($id, $medicine);            
+
+            $updateID = $this->request->getPost('update');
+
+            $PatientModel->update($updateID, $patient);  
+                      
             echo 'Updated!';
             return redirect()->back();
         }
@@ -92,18 +100,22 @@ class Doctor extends BaseController
                 return redirect()->back();
             }
 
-        } elseif ($refer === 'doctor') {
+        } elseif ($refer === 'doctor' || $refer === 'dashboard') {
 
             $updateID = $this->request->getPost('update');
 
             $namepat = $this->request->getPost('namepat');
-            $medicine = $this->request->getPost('medicine');
+            $telp = $this->request->getPost('telp');
+            $addr = $this->request->getPost('addr');
             $medrec = $this->request->getPost('medrec');
-
+            $medicine = $this->request->getPost('medicine');
+        
             $patient = [
                 'namepat' => $namepat,
+                'telp' => $telp,
+                'addr' => $addr,
                 'medrec' => $medrec,
-                'medicine' => $medicine
+                'medicine' => $medicine   
             ];
 
             $PatientModel->update($updateID, $patient);

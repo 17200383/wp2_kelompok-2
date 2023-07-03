@@ -9,7 +9,7 @@
                 <th>Keluhan</th>
                 <th>Obat</th>
                 <th>Tanggal</th>
-                <th>Simpan</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,13 +19,13 @@
                 <tr>
                     <td><?= $row['id'] ?></td>
                     <td>
-                        <input type="text" class="form-control" id="namepat" name="namepat" value="<?= $row['namepat'] ?>" <?php if ($refer != 'admin') { echo 'readonly'; } ?>>
+                        <input type="text" class="form-control" id="namepat" name="namepat" value="<?= $row['namepat'] ?>" <?php if ($refer == 'doctor') { echo 'readonly'; } ?>>
                     </td>
                     <td>
-                        <textarea class="form-control" rows="6" id="medrec" name="medrec"><?= $row['medrec'] ?></textarea>
+                        <textarea class="form-control" rows="6" id="medrec" name="medrec" <?php if ($refer == 'dashboard') { echo 'readonly'; } ?> > <?= $row['medrec'] ?></textarea>
                     </td>
                     <td>
-                        <select name="medicine" id="medicine" class="form-select">
+                        <select name="medicine" id="medicine" class="form-select" >
                             <?php foreach ($items as $item) : ?>
                                 <option value="<?= $item['name'] ?>" <?php if ($item['name'] == $row['medicine']) { echo 'selected'; } ?>>
                                     <?= $item['name'] ?>
@@ -37,10 +37,11 @@
                     <td>
                         <?php if ($refer === 'admin'): ?>
                             <button type="submit" name="delete" value="<?= $row['id'] ?>" class="btn btn-danger">Delete</button>
-                        <?php elseif ($refer === 'doctor'): ?>
+                        <?php elseif ($refer === 'doctor') : ?>
+                            <button type="submit" name="update" value="<?= $row['id'] ?>" class="btn btn-success">Update</button>
+                        <?php elseif ($refer === 'dashboard') : ?>
                             <button type="submit" name="update" value="<?= $row['id'] ?>" class="btn btn-success">Update</button>
                         <?php endif; ?>
-                        <!-- <button type="submit" name="update" value="<?= $row['id'] ?>" class="btn btn-success">Update</button> -->
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\PatientModel;
 use App\Models\MedicineModel;
 
 class Dashboard extends BaseController
@@ -14,16 +15,24 @@ class Dashboard extends BaseController
 
         $MedicineModel = new MedicineModel();
         $data['tableData'] = $MedicineModel->findAll();
+        $data['items'] = $MedicineModel->findAll();
+
+        $PatientModel = new PatientModel();
+        $data['tableData2'] = $PatientModel->findAll();
+
         $data['title'] = 'Dashboard';
         $data['refer'] = 'dashboard';
 
         return view('templates/header', $data)
 			.	view('templates/topbar',$data)
+            .   view('pages/doctor',$data)
+            .   view('pages/patient',$data)
             .   view('pages/dashboard', $data)
+            .   view('pages/admin', $data)
             .   view('templates/footer', $data);
     }
 
-    public function postDelete()
+    public function postUpdate()
     {
 
         $MedicineModel = new MedicineModel();

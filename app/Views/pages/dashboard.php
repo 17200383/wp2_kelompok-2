@@ -9,11 +9,11 @@
                 <th>Deskripsi</th>
                 <th>Dosis</th>
                 <th>Tanggal</th>
-                <th>Hapus</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-        <?= form_open('dashboard/delete') ?>
+        <?= form_open('dashboard/update') ?>
             <input type="hidden" name="refer" value="<?= $refer ?>">
             <?php foreach ($tableData as $row) : ?>
                 <tr>
