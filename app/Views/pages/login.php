@@ -1,4 +1,4 @@
-<div class="bg-primary-subtile">
+<div class="bg-primary-subtle">
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card text-center">
         <div class="card-body">
