@@ -5,6 +5,7 @@
 - Buka [XAMPP](https://www.apachefriends.org/ "XAMPP"), klik config Apache, pilih PHP (php.ini)
 - Cari ";extension=intl", hilangkan titik komanya (;) menjadi (extension=intl")
 - Letakan folder di \xampp\htdocs\
+- Pasikan nama folder "wp2_kelompok-2"
 - Jalankan Apache dan MySQL pada [XAMPP](https://www.apachefriends.org/ "XAMPP")
 - Buka [phpmyadmin](http://localhost/phpmyadmin "http://localhost/phpmyadmin") dan klik import (atas topbar)
 - Import database yang ada di folder \wp2_kelompok-2\assets\storage\wp2_kelompok-2.sql

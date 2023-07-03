@@ -26,12 +26,12 @@
                         <div class="collapse" id="collapseExample">
                             <div class="card card-body">
                             <small>No. Telp : <?= $row ['telp'] ?> </small>
+                            <input type="hidden" name="telp" value="<?= $row['telp'] ?>">
                             <br> 
                             <small>Alamat : <?= $row ['addr'] ?></small>
+                            <input type="hidden" name="addr" value="<?= $row['addr'] ?>">
                             </div>
                         </div>
-                        <!-- <small>No. Telp : <?= $row ['telp'] ?></small>
-                        <small>Alamat : <?= $row ['addr'] ?></small> -->
                     </td>
                     <td>
                         <textarea class="form-control" rows="6" id="medrec" name="medrec" <?php if ($refer == 'dashboard') { echo 'readonly'; } ?> > <?= $row['medrec'] ?></textarea>
@@ -49,10 +49,10 @@
                     <td>
                         <?php if ($refer === 'admin'): ?>
                             <button type="submit" name="delete" value="<?= $row['id'] ?>" class="btn btn-danger">Delete</button>
-                        <?php elseif ($refer === 'doctor') : ?>
+                        <?php elseif ($refer === 'doctor' || $refer === 'dashboard') : ?>
                             <button type="submit" name="update" value="<?= $row['id'] ?>" class="btn btn-success">Update</button>
-                        <?php elseif ($refer === 'dashboard') : ?>
-                            <button type="submit" name="update" value="<?= $row['id'] ?>" class="btn btn-success">Update</button>
+                        <!-- <php elseif ($refer === 'dashboard') : ?>
+                            <button type="submit" name="update" value="<= $row['id'] ?>" class="btn btn-success">Update</button> -->
                         <?php endif; ?>
                     </td>
                 </tr>
