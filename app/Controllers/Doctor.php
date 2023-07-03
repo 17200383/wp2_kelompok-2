@@ -35,7 +35,7 @@ class Doctor extends BaseController
         $rules = [
             'namepat' => 'required|max_length[65]',
             'telp' => 'max_length[15]',
-            'addr' => 'max_length[100]',
+            'addr' => 'max_length[255]',
 
         ];      
 
@@ -62,16 +62,26 @@ class Doctor extends BaseController
         $PatientModel = new PatientModel();
 
         $existname = $PatientModel->checkExist($namepat);
-        
+
         if ($existname) {
+            
+            $id = $PatientModel->getId($existname['namepat']);
 
-            $updateID = $this->request->getPost('update');
+            $PatientModel->updateRow($id, $patient);
 
-            $PatientModel->update($updateID, $patient);  
-                      
             echo 'Updated!';
             return redirect()->back();
         }
+        
+        // if ($existname) {
+
+        //     $updateID = $this->request->getPost('update');
+
+        //     $PatientModel->update($namepat, $patient);  
+                      
+        //     echo 'Updated!';
+        //     return redirect()->back();
+        // }
        
         $PatientModel->resetAutoIncrement();
         $save = $PatientModel->insert($patient);

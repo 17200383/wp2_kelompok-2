@@ -20,6 +20,18 @@
                     <td><?= $row['id'] ?></td>
                     <td>
                         <input type="text" class="form-control" id="namepat" name="namepat" value="<?= $row['namepat'] ?>" <?php if ($refer == 'doctor') { echo 'readonly'; } ?>>
+                        <a class="btn btn-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Data diri
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                            <small>No. Telp : <?= $row ['telp'] ?> </small>
+                            <br> 
+                            <small>Alamat : <?= $row ['addr'] ?></small>
+                            </div>
+                        </div>
+                        <!-- <small>No. Telp : <?= $row ['telp'] ?></small>
+                        <small>Alamat : <?= $row ['addr'] ?></small> -->
                     </td>
                     <td>
                         <textarea class="form-control" rows="6" id="medrec" name="medrec" <?php if ($refer == 'dashboard') { echo 'readonly'; } ?> > <?= $row['medrec'] ?></textarea>

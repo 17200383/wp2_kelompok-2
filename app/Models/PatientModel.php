@@ -15,6 +15,27 @@ class PatientModel extends Model
         return $this->where('namepat', $namepat)->first();
     }
 
+    public function getId($namepat)
+    {
+        $row = $this->select('id')
+            ->where('namepat', $namepat)
+            ->get()
+            ->getRow();
+
+        if ($row) {
+            return $row->id;
+        } else {
+            return null;
+        }
+    }
+
+    public function updateRow($id, $patient)
+    {
+        $this->where('id', $id)
+            ->set($patient)
+            ->update();
+    }
+
     // public function getId($namepat)
     // {
     //     $row = $this->select('id')
