@@ -97,6 +97,7 @@ class Doctor extends BaseController
 
     public function postUpdate()
     {
+        
         $PatientModel = new PatientModel();
         
         $refer = $this->request->getPost('refer');

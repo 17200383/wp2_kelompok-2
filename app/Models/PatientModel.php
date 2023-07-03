@@ -36,6 +36,11 @@ class PatientModel extends Model
             ->update();
     }
 
+    public function getTest($namepat)
+    {
+        return $this->where('namepat', $namepat)->findAll();
+    }
+
     // public function getId($namepat)
     // {
     //     $row = $this->select('id')

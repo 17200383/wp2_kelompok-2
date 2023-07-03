@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\PatientModel;
 use App\Models\TestModel;
 
 class Test extends BaseController
@@ -16,6 +17,7 @@ class Test extends BaseController
             .   view('templates/testlogin', $data)
             .   view('templates/testadd', $data)
             .   view('templates/testread', $data)
+            .   view('templates/testview', $data)
             .   view('templates/footer', $data);
     }
 
@@ -100,6 +102,27 @@ class Test extends BaseController
     
         return;
     }
+
+    public function postview()
+    {
+        $namepat = $this->request->getPost('namepat');
+    
+        $PatientModel = new PatientModel();
+    
+        $records = $PatientModel->getTest($namepat);
+
+        if ($records) {
+            foreach ($records as $record) {
+                            print_r($record);
+                            echo '<br>';
+                        }
+                    }
+         else {
+            echo 'Record not found.';
+        }
+    
+        return;
+    }    
     
 
     //     $records = $TestModel->where('username', $username)->findAll();
